@@ -1,0 +1,12 @@
+.idea/
+ali_download.xml
+*.log
+/test/
+*.xml
+__pycache__/
+*.pyc
+*.DS_Store
+*.swp
+celerybeat-schedule
+*.sh
+
