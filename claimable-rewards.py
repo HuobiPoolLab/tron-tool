@@ -24,14 +24,16 @@ def main(argv):
     # example: http://127.0.0.1:8090
     base_url = ''
 
+    prompt_info = 'claimable-rewards.py --owner-address <your address> --private-key <your private key> --base-url <FullNode url>'
+
     try:
         opts, args = getopt.getopt(argv,"h",["owner-address=","private-key=","base-url="])
     except getopt.GetoptError:
-        print('claimable-rewards.py --owner-address <your address> --private-key <your private key> --base-url <FullNode url>')
+        print(prompt_info)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('claimable-rewards.py --owner-address <your address> --private-key <your private key> --base-url <FullNode url>')
+            print(prompt_info)
             sys.exit()
         elif opt in ("--owner-address"):
             owner_address = arg

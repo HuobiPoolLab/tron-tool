@@ -26,14 +26,16 @@ def main(argv):
     # example: http://127.0.0.1:8090
     base_url = ''
 
+    prompt_info = 'easy-transfer.py --from-address <drawee address> --to-address <payee address> --private-key <drawee private key> --base-url <FullNode url>'
+
     try:
         opts, args = getopt.getopt(argv,"h",["from-address=","to-address=","private-key=","base-url="])
     except getopt.GetoptError:
-        print('easy-transfer.py --from-address <drawee address> --to-address <payee address> --private-key <drawee private key> --base-url <FullNode url>')
+        print(prompt_info)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('easy-transfer.py --from-address <drawee address> --to-address <payee address> --private-key <drawee private key> --base-url <FullNode url>')
+            print(prompt_info)
             sys.exit()
         elif opt in ("--from-address"):
             from_address = arg
